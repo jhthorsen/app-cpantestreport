@@ -2,6 +2,8 @@ package App::CpanTestReport;
 use Mojo::Base 'Mojolicious';
 
 use Mojo::Redis;
+use Time::Piece;
+use Time::Seconds;
 
 our $VERSION = '0.01';
 
@@ -17,12 +19,13 @@ sub startup {
 
   $self->_add_helper_backend;
   $self->_add_helper_cache;
+  $self->_add_helper_human_date;
 
   my $r = $self->routes;
-  $r->get('/')->to('root#search')->name('search');
-  $r->get('/search')->to('root#search');
-  $r->get('/author/:id')->to('author#summary')->name('author.summary');
-  $r->get('/dist/*name')->to('dist#report')->name('dist.report');
+  $r->get('/')->to('root#search', page => 'search')->name('search');
+  $r->get('/search')->to('root#search', page => 'search');
+  $r->get('/author/:id')->to('author#summary', page => 'author')->name('author.summary');
+  $r->get('/dist/*name')->to('dist#report',    page => 'dist')->name('dist.report');
 }
 
 sub _add_helper_backend {
@@ -57,6 +60,19 @@ sub _add_helper_cache {
     cache => sub {
       my $c = shift;
       return $c->stash->{'redis.cache'} ||= $redis->cache->refresh($c->param('_refresh'));
+    }
+  );
+}
+
+sub _add_helper_human_date {
+  my $self = shift;
+
+  $self->helper(
+    'human.date' => sub {
+      my $date = Mojo::Date->new(pop);
+      my $now  = time;
+
+      return localtime($date->epoch)->strftime($date->epoch < $now - ONE_DAY * 180 ? '%e. %b %Y' : '%e. %b, %H:%M');
     }
   );
 }

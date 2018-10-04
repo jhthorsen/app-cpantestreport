@@ -1,0 +1,84 @@
+<style>
+body > .container {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+body > footer.container {
+  border-top: 1px solid #d6d6e2;
+  font-size: 0.8em;
+  color: #666;
+  padding-top: 1em;
+  padding-bottom: 0;
+}
+
+.cloud .badge {
+  padding: 0.3em 0;
+  display: inline-block;
+}
+
+.cloud .badge span {
+  padding: 0 0.2em;
+  display: inline-block;
+  max-width: 10em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.navbar-wrapper {
+  background: rgba(250, 250, 250, 0.95);
+  border-bottom: 1px solid #807fe2;
+  padding: 0.4em 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.vertical-align {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* search page */
+.page-search .input-group {
+  width: 100%;
+}
+
+.page-search .input-lg {
+  width: 20em;
+  max-width: 100%;
+}
+
+.page-search .empty {
+  border: 1px solid #d6d6e2;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  width: 34rem;
+}
+
+@media (max-width: 34rem) {
+  .page-search {
+    background: #f9f9f9;
+  }
+  .page-search .empty {
+    border: 0;
+  }
+}
+
+/* report page */
+.page-report pre {
+  background: #f9f9f9;
+  font-size: 0.8em;
+  padding: 0.2em;
+  margin-right: -0.2em;
+  margin-left: -0.2em;
+  border: 1px solid #d6d6e2;
+  overflow: auto;
+}
+</style>

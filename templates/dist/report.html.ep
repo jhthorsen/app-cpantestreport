@@ -1,0 +1,51 @@
+% title "$name\'s test summary";
+% layout 'default';
+%= include 'partial/header'
+<div class="container grid-lg">
+  <h1><%= $name %></h1>
+
+  <p class="cloud">
+    <a href="<%= $c->req->url->path %>" class="badge text-dark" data-badge="<%= int @$reports %>"><span>All</span></a>
+    <a href="<%= url_with('dist.report')->query({grade => 'fail'}) %>" class="badge text-error" data-badge="<%= $stats->{grade}{fail} || 0 %>"><span>Fail</span></a>
+    <a href="<%= url_with('dist.report')->query({grade => 'pass'}) %>" class="badge text-success" data-badge="<%= $stats->{grade}{pass} || 0 %>"><span>Pass</span></a>
+    % for my $section (qw(perl osname platform)) {
+      % for my $name (sort keys %{$stats->{$section}}) {
+        % my $item = $stats->{$section}{$name};
+        % next unless $item->{fail};
+        <a href="<%= url_with('dist.report')->query({$section => $name}) %>" class="badge text-<%= $item->{fail} ? 'error' : 'success' %>" data-badge="<%= $item->{fail} %>" title="<%= $name %>"><span><%= $name %></span></a>
+      % }
+    % }
+  </p>
+
+  <table class="table table-striped">
+    <thead>
+      <tr class="">
+        <th>Date</th>
+        <th>Perl</th>
+        <th>OS</th>
+        <th>Platform</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      % unless (@$reports) {
+        <tr>
+          <td colspan="5">
+            No reports match your filter. Want to show
+            <a href="<%= $c->req->url->path %>">all</a>?
+          </td>
+        </tr>
+      % }
+      % for my $report (@$reports) {
+        % local $report->{format} = 'html';
+        <tr>
+          <td><%= link_to $c->human->date($report->{date}), 'test.report' => {guid => $report->{guid}} %></td>
+          <td><%= join '.', @{$report->{perl}} %></td>
+          <td><%= ucfirst $report->{osname} %>, <%= $report->{osvers} %></td>
+          <td><%= $report->{platform} %></td>
+          <td><span class="label label-<%= $report->{grade} eq 'fail' ? 'error' : $report->{grade} eq 'pass' ? 'success' : 'primary' %>"><%= $report->{grade} %></span></td>
+        </tr>
+      % }
+    </tbody>
+  </table>
+</div>

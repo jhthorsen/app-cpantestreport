@@ -1,0 +1,44 @@
+% title "$id\'s test summary";
+% layout 'default';
+%= include 'partial/header'
+<div class="container grid-lg">
+  <h1>Summary for "<%= $id %>"</h1>
+
+  <p class="cloud">
+    <span class="badge text-dark" data-badge="<%= int @$dists %>">Distributions</span>
+    <span class="badge text-error" data-badge="<%= $stats->{fail} || 0 %>">Fail</span>
+    <span class="badge text-success" data-badge="<%= $stats->{pass} || 0 %>">Success</span>
+    <span class="badge text-warning" data-badge="<%= $stats->{unknown} || 0 %>">Unknown</span>
+    <span class="badge text-primary" data-badge="<%= $stats->{na} || 0 %>">NA</span>
+  </p>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Distribution</th>
+        <th>Fail</th>
+        <th>Pass</th>
+        <th>Unknown</th>
+        <th>NA</th>
+      </tr>
+    </thead>
+    <tbody>
+      % unless (@$dists) {
+        <tr>
+          <td colspan="5">
+            No releases found for author "<%= $id %>".
+          </td>
+        </tr>
+      % }
+      % for my $dist (@$dists) {
+        <tr class="<%= $dist->{fail} ? 'text-error' : '' %>">
+          <td><a href="<%= url_for('dist.report', name => "$dist->{name}-$dist->{version}") %>"><%= "$dist->{name} $dist->{version}" %></a></td>
+          <td><%= $dist->{fail} || 0 %></td>
+          <td><%= $dist->{pass} || 0 %></td>
+          <td><%= $dist->{unknown} || 0 %></td>
+          <td><%= $dist->{na} || 0 %></td>
+        </tr>
+      % }
+    </tbody>
+  </table>
+</div>

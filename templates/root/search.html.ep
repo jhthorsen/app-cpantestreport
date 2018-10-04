@@ -1,0 +1,27 @@
+% title 'Search';
+% layout 'default';
+<div class="vertical-align">
+  %= form_for 'search', class => 'empty', begin
+    <div class="empty-icon"><i class="icon icon-3x icon-search text-primary"></i></div>
+    <p>
+      Search for <a href="http://cpantesters.org/">CPAN Testers</a> reports by
+      <span class="text-warning">module</span>,
+      <span class="text-success">distribution</span> or
+      <span class="text-error">author</span>.
+    </p>
+    <div class="empty-action input-group input-inline">
+      %= search_field 'q', class => 'form-input input-lg', id => 'input-query', placeholder => 'Ex: Mojolicious'
+      <button class="btn btn-primary input-group-btn btn-lg">Search</button>
+    </div>
+    % if ($error) {
+      <p class="empty-subtitle text-error"><%= $error %></p>
+    % }
+    <br>
+    <div class="divider text-center" data-content="Examples"></div>
+    <p>
+      <a href="?q=OpenAPI::Client"><span class="label label-warning">OpenAPI::Client</span></a>
+      <a href="?q=Mojolicious-8.01"><span class="label label-success">Mojolicious-8.01</span></a>
+      <a href="?q=JHTHORSEN"><span class="label label-error">JHTHORSEN</span></a>
+    </p>
+  % end
+</div>
