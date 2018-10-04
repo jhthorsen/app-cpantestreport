@@ -9,7 +9,9 @@ sub startup {
   my $self = shift;
 
   $self->defaults(
-    backends => {cpantesters => 'http://api.cpantesters.org/v3', metacpan => 'https://fastapi.metacpan.org/v1'});
+    backends => {cpantesters => 'http://api.cpantesters.org/v3', metacpan => 'https://fastapi.metacpan.org/v1'},
+    error    => ''
+  );
 
   $self->plugin('PromiseActions');
 
