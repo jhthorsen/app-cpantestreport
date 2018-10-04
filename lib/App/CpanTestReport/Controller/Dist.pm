@@ -73,9 +73,9 @@ sub _get_report_p {
 
     @filtered = sort {
            $a->{grade} cmp $b->{grade}
-        || $b->{perl}[1] <=> $a->{perl}[1]
         || $a->{osname} cmp $b->{osname}
         || $a->{osvers} cmp $b->{osvers}
+        || $b->{perl}[1] <=> $a->{perl}[1]
     } @filtered;
 
     return {reports => \@filtered, stats => \%stats};
