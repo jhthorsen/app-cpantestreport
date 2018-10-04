@@ -1,0 +1,5 @@
+#!/usr/bin/env perl
+use Mojo::Base -strict;
+use Mojolicious::Commands;
+use if -d 'lib', lib => 'lib';
+Mojolicious::Commands->start_app('App::CpanTestReport');
