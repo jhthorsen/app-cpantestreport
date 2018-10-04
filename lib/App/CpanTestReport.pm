@@ -20,6 +20,7 @@ sub startup {
 
   my $r = $self->routes;
   $r->get('/')->to('root#search')->name('search');
+  $r->get('/search')->to('root#search');
   $r->get('/author/:id')->to('author#summary')->name('author.summary');
   $r->get('/dist/*name')->to('dist#report')->name('dist.report');
 }
