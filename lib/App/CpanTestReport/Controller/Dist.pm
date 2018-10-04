@@ -89,3 +89,22 @@ sub _in {
 }
 
 1;
+
+=encoding utf8
+
+=head1 NAME
+
+App::CpanTestReport::Controller::Dist - Distribution actions
+
+=head1 METHODS
+
+=head2 report
+
+Show a report for a distribution with version or redirect to the latest version
+of the distribution if version is missing.
+
+=head1 SEE ALSO
+
+L<App::CpanTestReport>.
+
+=cut

@@ -59,3 +59,21 @@ sub _parse_report {
 }
 
 1;
+
+=encoding utf8
+
+=head1 NAME
+
+App::CpanTestReport::Controller::Test - Test actions
+
+=head1 METHODS
+
+=head2 report
+
+Will show a given test report.
+
+=head1 SEE ALSO
+
+L<App::CpanTestReport>.
+
+=cut

@@ -23,5 +23,8 @@
       <a href="?q=Mojolicious-8.01"><span class="label label-success">Mojolicious-8.01</span></a>
       <a href="?q=JHTHORSEN"><span class="label label-error">JHTHORSEN</span></a>
     </p>
+    <p class="about">
+      <a href="https://github.com/jhthorsen/app-cpantestreport#readme">About</a>
+    </p>
   % end
 </div>

@@ -44,3 +44,21 @@ sub _get_summary_by_author_p {
 }
 
 1;
+
+=encoding utf8
+
+=head1 NAME
+
+App::CpanTestReport::Controller::Author - Author actions
+
+=head1 METHODS
+
+=head2 summary
+
+Show summary for an author.
+
+=head1 SEE ALSO
+
+L<App::CpanTestReport>
+
+=cut

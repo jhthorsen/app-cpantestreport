@@ -61,3 +61,21 @@ sub _normalize_search_query {
 }
 
 1;
+
+=encoding utf8
+
+=head1 NAME
+
+App::CpanTestReport::Controller::Root - Various actions
+
+=head1 METHODS
+
+=head2 search
+
+Will show a search page or redirect to a given resource based on input.
+
+=head1 SEE ALSO
+
+L<App::CpanTestReport>.
+
+=cut

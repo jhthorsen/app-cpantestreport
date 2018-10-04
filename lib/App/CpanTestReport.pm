@@ -79,3 +79,88 @@ sub _add_helper_human_date {
 }
 
 1;
+
+=encoding utf8
+
+=head1 NAME
+
+App::CpanTestReport - Search for CPAN Testers reports by module, distribution or author.
+
+=head1 SYNOPSIS
+
+  $ ./script/cpantestreport daemon --listen http://*:3000
+
+=head1 DESCRIPTION
+
+L<App::CpanTestReport> is a web page where you can search for CPAN Testers
+reports by module, distribution or author and see test reports created by
+L<http://cpantesters.org/>.
+
+=head1 RESOURCES
+
+=over 2
+
+=item * /
+
+Show a search page.
+
+=item * /search
+
+Alias for "/".
+
+=item * /search?q=JHTHORSEN
+
+=item * /search?author=JHTHORSEN
+
+Redirects to author search results.
+
+=item * /search?dist=Mojolicious
+
+=item * /search?dist=Mojolicious-8.01
+
+=item * /search?q=Mojolicious
+
+=item * /search?q=Mojolicious-8.01
+
+Redirects to dist search results.
+
+=item * /author/JHTHORSEN
+
+Show a summary of all the dists for a given author.
+
+=item * /dist/Mojolicious
+
+Redirects to the latest version of L<Mojolicious>
+
+=item * /dist/Mojolicious-8.01
+
+Show search results for L<Mojolicious> version 8.01.
+
+=item * /report/57fffae2-689f-1015-8f24-a8e65f496936
+
+Show a given test report.
+
+=back
+
+=head1 METHODS
+
+=head2 startup
+
+Called by L<Mojolicious> to start up the web server.
+
+=head1 AUTHOR
+
+Jan Henning Thorsen
+
+=head1 COPYRIGHT AND LICENSE
+
+This program is free software, you can redistribute it and/or modify it under
+the terms of the Artistic License version 2.0.
+
+=head1 SEE ALSO
+
+L<http://api.cpantesters.org/>,
+L<https://api.metacpan.org/> and
+L<https://github.com/cpan-testers/cpantesters-web>.
+
+=cut

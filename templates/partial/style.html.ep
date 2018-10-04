@@ -60,6 +60,14 @@ body > footer.container {
   margin-right: auto;
   max-width: 100%;
   width: 34rem;
+  position: relative;
+}
+
+.page-search .about {
+  position: absolute;
+  right: 1.6rem;
+  bottom: 0.7rem;
+  margin: 0;
 }
 
 @media (max-width: 34rem) {
