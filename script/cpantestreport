@@ -1,5 +1,10 @@
 #!/usr/bin/env perl
-use Mojo::Base -strict;
+use strict;
+use warnings;
+
+use FindBin;
+BEGIN { unshift @INC, "$FindBin::Bin/../lib" }
 use Mojolicious::Commands;
-use if -d 'lib', lib => 'lib';
+
+# Start command line interface for application
 Mojolicious::Commands->start_app('App::CpanTestReport');
