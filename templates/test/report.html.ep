@@ -1,0 +1,57 @@
+% use Text::Markdown 'markdown';
+% title $distribution->{name};
+% layout 'default';
+%= include 'partial/header'
+<div class="container grid-lg">
+  <h1>
+    <%= $distribution->{name} %> <%= $distribution->{version} %>
+    <small class="text-<%= $result->{grade} eq 'fail' ? 'error' : 'dark' %>"><%= ucfirst $result->{grade} %></small>
+  </h1>
+  <p id="date">
+    Tested by
+    <a href="mailto:<%= $reporter->{email} %>"><%= $reporter->{name} || 'Anonymous' %></a>,
+    <%= $c->human->date($created || time) %>,
+  </p>
+
+  <ol>
+    <li><a href="#program-output">Program output</a></li>
+    <li><a href="#tester-comments">Tester comments</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#environment-and-other-context">Environment and other context</a></li>
+    <li><a href="<%= url_for('dist.report', name => "$distribution->{name}-$distribution->{version}") %>">More reports...</a></li>
+  </ol>
+
+  %== markdown $result->{output}{preamble}
+
+  <h2 id="program-output">Program output</h2>
+  <pre><%= $result->{output}{program_output} %></pre>
+
+  <h2 id="prerequisites">Prerequisites</h2>
+  <h3>Requires</h3>
+  <ul>
+    % for my $name (keys %{$result->{output}{prerequisites}{requires} || {}}) {
+      % my $version = $result->{output}{prerequisites}{requires}{$name};
+      <li><a href="<%= url_for('dist.report', name => "$name-$version") %>"><%= "$name $version" %></a></li>
+    % }
+  </ul>
+  <h3>Build requires</h3>
+  <ul>
+    % for my $name (keys %{$result->{output}{prerequisites}{build_requires} || {}}) {
+      % my $version = $result->{output}{prerequisites}{build_requires}{$name};
+      <li><a href="<%= url_for('dist.report', name => "$name-$version") %>"><%= "$name $version" %></a></li>
+    % }
+  </ul>
+  <h3>Configure requires</h3>
+  <ul>
+    % for my $name (keys %{$result->{output}{prerequisites}{configure_requires} || {}}) {
+      % my $version = $result->{output}{prerequisites}{configure_requires}{$name};
+      <li><a href="<%= url_for('dist.report', name => "$name-$version") %>"><%= "$name $version" %></a></li>
+    % }
+  </ul>
+
+  <h2 id="tester-comments">Tester comments</h2>
+  %== markdown $result->{output}{tester_comments}
+
+  <h2 id="environment-and-other-context">Environment and other context</h2>
+  <pre><%= $result->{output}{environment_and_other_context} %></pre>
+</div>

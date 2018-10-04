@@ -26,6 +26,7 @@ sub startup {
   $r->get('/search')->to('root#search', page => 'search');
   $r->get('/author/:id')->to('author#summary', page => 'author')->name('author.summary');
   $r->get('/dist/*name')->to('dist#report',    page => 'dist')->name('dist.report');
+  $r->get('/report/:guid')->to('test#report', page => 'report')->name('test.report');
 }
 
 sub _add_helper_backend {
