@@ -53,7 +53,7 @@ sub _get_report_p {
 
     my (@filtered, %stats);
     for my $report (@$reports) {
-      my @perl_v = map {int} split /\./, $report->{perl};
+      my @perl_v = map { /^\d+$/ ? int : $_ } split /\./, $report->{perl};
       my $perl_m = join '.', @perl_v[0, 1];
       $report->{platform} =~ s!^(?:\w+\.)?(\w+)-.*$!$1!;
       $stats{grade}{$report->{grade}}++;
