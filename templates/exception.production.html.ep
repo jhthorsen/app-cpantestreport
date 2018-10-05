@@ -1,0 +1,17 @@
+% title 'Internal server error';
+% layout 'default';
+%= include 'partial/header'
+<div class="container grid-lg">
+  <h1>Oh noes!</h1>
+  <p>
+    Something terrible has happened that we could not recover from.
+    Maybe you want <a href="https://github.com/jhthorsen/app-cpantestreport/issues">to
+    let us know</a> about the issue? If you do, then please include the location below:
+  </p>
+  <p class="text-error">
+    <%= $c->req->url->to_abs %>
+  </p>
+  <p>
+    <a href="/">Start over again</a>.
+  </p>
+</div>

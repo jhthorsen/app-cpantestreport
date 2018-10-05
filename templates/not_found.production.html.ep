@@ -1,0 +1,9 @@
+% title 'Not found';
+% layout 'default';
+%= include 'partial/header'
+% my $url = $c->req->url;
+<div class="container grid-lg">
+  <h1>Not found</h1>
+  <p>The given resource <%= link_to $url, $url %> was not found.</p>
+  <p>Maybe you need to <a href="/">start over</a> again?</p>
+</div>
