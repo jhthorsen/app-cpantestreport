@@ -41,7 +41,9 @@ sub _add_helper_backend {
       $url->query($query) if $query;
 
       return $c->cache->compute_p(
-        "cpan_testers:$backend:$url" => $c->stash('cache_timeout') || 600 => sub {
+        $url->clone->scheme(undef)->to_string,
+        $c->stash('cache_timeout') || 600,
+        sub {
           return $c->app->ua->get_p($url)->then(sub {
             my $tx = shift;
             return $tx->res->json unless my $err = $tx->error;
@@ -60,7 +62,8 @@ sub _add_helper_cache {
   $self->helper(
     cache => sub {
       my $c = shift;
-      return $c->stash->{'redis.cache'} ||= $redis->cache->refresh($c->param('_refresh'));
+      return $c->stash->{'redis.cache'}
+        ||= $redis->cache(namespace => 'cpantestreport')->refresh($c->param('_refresh'));
     }
   );
 }
