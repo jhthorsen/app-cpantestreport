@@ -20,6 +20,7 @@ sub startup {
   $self->_add_helper_backend;
   $self->_add_helper_cache;
   $self->_add_helper_human_date;
+  $self->_add_helper_markdown;
 
   my $r = $self->routes;
   $r->get('/')->to('root#search', page => 'search')->name('search');
@@ -77,6 +78,25 @@ sub _add_helper_human_date {
       my $now  = time;
 
       return localtime($date->epoch)->strftime($date->epoch < $now - ONE_DAY * 180 ? '%e. %b %Y' : '%e. %b, %H:%M');
+    }
+  );
+}
+
+sub _add_helper_markdown {
+  my $self = shift;
+
+  $self->helper(
+    markdown => sub {
+      my ($c, $text) = @_;
+      my $dist_url = $c->url_for('dist.report', name => '');
+
+      $text //= '';
+      $text =~ s|(\w\S+\@\S+\.\w{2,})|<a href="mailto:$1">$1</a>|g;
+      $text =~ s|(https?://\S+)([\!\.,]\s)?|<a href="$1">$1</a>$2|g;
+      $text =~ s|(\w\S+-\d+\.[\d\.]+)|<a href="$dist_url$1">$1</a>|g;
+      $text = join '', map {"<p>$_</p>"} split /\n\r?\n\r?/, $text;
+
+      return Mojo::ByteStream->new($text);
     }
   );
 }

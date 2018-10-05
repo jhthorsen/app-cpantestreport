@@ -52,6 +52,7 @@ sub _parse_report {
     }
   }
 
+  $report->{result}{output}{tester_comments} =~ s!Additional comments from \S+!!;
   $report->{result}{output}{$section} = _clean($report->{block});    # Capture last block
   delete $report->{block};
   delete $report->{result}{output}{uncategorized};

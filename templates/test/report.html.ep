@@ -1,4 +1,3 @@
-% use Text::Markdown 'markdown';
 % title $distribution->{name};
 % layout 'default';
 %= include 'partial/header'
@@ -21,7 +20,7 @@
     <li><a href="<%= url_for('dist.report', name => "$distribution->{name}-$distribution->{version}") %>">More reports...</a></li>
   </ol>
 
-  %== markdown $result->{output}{preamble}
+  %= markdown $result->{output}{preamble}
 
   <h2 id="program-output">Program output</h2>
   <pre><%= $result->{output}{program_output} %></pre>
@@ -50,7 +49,7 @@
   </ul>
 
   <h2 id="tester-comments">Tester comments</h2>
-  %== markdown $result->{output}{tester_comments}
+  %= markdown $result->{output}{tester_comments}
 
   <h2 id="environment-and-other-context">Environment and other context</h2>
   <pre><%= $result->{output}{environment_and_other_context} %></pre>
