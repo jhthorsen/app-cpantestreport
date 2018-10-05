@@ -2,6 +2,7 @@ package App::CpanTestReport;
 use Mojo::Base 'Mojolicious';
 
 use Mojo::Redis;
+use Scalar::Util 'blessed';
 use Time::Piece;
 use Time::Seconds;
 
@@ -15,8 +16,7 @@ sub startup {
     error    => ''
   );
 
-  $self->plugin('PromiseActions');
-
+  $self->hook(around_action => \&_hook_around_action);
   $self->_add_helper_backend;
   $self->_add_helper_cache;
   $self->_add_helper_human_date;
@@ -79,6 +79,29 @@ sub _add_helper_human_date {
       return localtime($date->epoch)->strftime($date->epoch < $now - ONE_DAY * 180 ? '%e. %b %Y' : '%e. %b, %H:%M');
     }
   );
+}
+
+sub _hook_around_action {
+  my ($next, $c) = @_;
+  my @args = $next->();
+
+  $c->inactivity_timeout(20);
+
+  if (blessed($args[0]) and $args[0]->can('then')) {
+    my $tx = $c->render_later->tx;
+    $args[0]->then(
+      undef,
+      sub {
+        my $err = shift;
+        my $reply_with = $err =~ /Not Found/i ? 'not_found' : 'exception';
+        $c->reply->$reply_with($err);
+        undef $tx;
+      }
+    );
+    $args[0]->wait if $args[0]->can('wait');
+  }
+
+  return @args;
 }
 
 1;
