@@ -53,7 +53,7 @@ sub _normalize_search_query {
     }
     else {
       $query->{dist} ||= $p;
-      $query->{dist} =~ s!::!-!;
+      $query->{dist} =~ s!::!-!g;
     }
   }
 
