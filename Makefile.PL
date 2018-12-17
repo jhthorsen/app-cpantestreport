@@ -9,7 +9,7 @@ my %WriteMakefileArgs = (
   EXE_FILES      => [qw(script/cpantestreport)],
   BUILD_REQUIRES => {},
   TEST_REQUIRES  => {'Test::More' => '0.88'},
-  PREREQ_PM      => {'Mojo::Redis' => '3.11', 'Mojolicious' => '8.00', 'Mojolicious::Plugin::PromiseActions' => '0.07'},
+  PREREQ_PM      => {'Mojo::Redis' => '3.11', 'Mojolicious' => '8.00'},
   META_MERGE     => {
     'dynamic_config' => 0,
     'meta-spec'      => {version => 2},
