@@ -44,6 +44,7 @@ body > footer.container {
 
 .navbar-wrapper.fixed {
   position: fixed;
+  width: 100vw;
 }
 
 .vertical-align {
@@ -89,6 +90,11 @@ body > footer.container {
 
   .page-search .empty {
     border: 0;
+  }
+
+  .page-dist th:nth-of-type(4),
+  .page-dist td:nth-of-type(4) {
+    display: none;
   }
 }
 

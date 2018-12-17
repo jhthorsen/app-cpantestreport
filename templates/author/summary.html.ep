@@ -18,7 +18,6 @@
         <th>Distribution</th>
         <th>Fail</th>
         <th>Pass</th>
-        <th>Unknown</th>
         <th>NA</th>
       </tr>
     </thead>
@@ -35,8 +34,7 @@
           <td><a href="<%= url_for('dist.report', name => "$dist->{name}-$dist->{version}") %>"><%= "$dist->{name} $dist->{version}" %></a></td>
           <td><%= $dist->{fail} || 0 %></td>
           <td><%= $dist->{pass} || 0 %></td>
-          <td><%= $dist->{unknown} || 0 %></td>
-          <td><%= $dist->{na} || 0 %></td>
+          <td><%= ($dist->{unknown} + $dist->{na}) || 0 %></td>
         </tr>
       % }
     </tbody>
