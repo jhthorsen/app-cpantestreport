@@ -23,28 +23,28 @@
   %= markdown $result->{output}{preamble}
 
   <h2 id="program-output">Program output</h2>
-  <pre><%= $result->{output}{program_output} %></pre>
+  <pre class="program-output"><%= $result->{output}{program_output} %></pre>
 
   <h2 id="prerequisites">Prerequisites</h2>
   <h3>Requires</h3>
-  <ul>
+  <ul class="requires">
     % for my $name (keys %{$result->{output}{prerequisites}{requires} || {}}) {
       % my $version = $result->{output}{prerequisites}{requires}{$name};
-      <li><a href="<%= url_for('dist.report', name => "$name-$version") %>"><%= "$name $version" %></a></li>
+      <li><a href="<%= url_for('dist.report', name => dist("$name-$version")) %>"><%= "$name $version" %></a></li>
     % }
   </ul>
   <h3>Build requires</h3>
-  <ul>
+  <ul class="build-requires">
     % for my $name (keys %{$result->{output}{prerequisites}{build_requires} || {}}) {
       % my $version = $result->{output}{prerequisites}{build_requires}{$name};
-      <li><a href="<%= url_for('dist.report', name => "$name-$version") %>"><%= "$name $version" %></a></li>
+      <li><a href="<%= url_for('dist.report', name => dist("$name-$version")) %>"><%= "$name $version" %></a></li>
     % }
   </ul>
   <h3>Configure requires</h3>
-  <ul>
+  <ul class="configure-requires">
     % for my $name (keys %{$result->{output}{prerequisites}{configure_requires} || {}}) {
       % my $version = $result->{output}{prerequisites}{configure_requires}{$name};
-      <li><a href="<%= url_for('dist.report', name => "$name-$version") %>"><%= "$name $version" %></a></li>
+      <li><a href="<%= url_for('dist.report', name => dist("$name-$version")) %>"><%= "$name $version" %></a></li>
     % }
   </ul>
 
@@ -52,5 +52,5 @@
   %= markdown $result->{output}{tester_comments}
 
   <h2 id="environment-and-other-context">Environment and other context</h2>
-  <pre><%= $result->{output}{environment_and_other_context} %></pre>
+  <pre class="environment-and-other-context"><%= $result->{output}{environment_and_other_context} %></pre>
 </div>

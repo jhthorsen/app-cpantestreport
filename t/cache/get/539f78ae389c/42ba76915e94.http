@@ -1,0 +1,517 @@
+HTTP/1.1 200 OK
+Date: Mon, 17 Dec 2018 06:23:44 GMT
+X-Timer: S1545027823.374580,VS0,VE958
+Accept-Ranges: bytes
+Accept-Ranges: bytes
+Accept-Ranges: bytes
+Accept-Ranges: bytes
+X-Cache: MISS, MISS
+Server: nginx
+Age: 0
+Age: 0
+Vary: Accept-Encoding
+Connection: keep-alive
+X-Served-By: cache-lhr6325-LHR, cache-nrt6149-NRT
+Cache-Control: private
+Content-Length: 14762
+X-Cache-Hits: 0, 0
+Via: 1.1 varnish
+Via: 1.1 varnish
+X-Catalyst: 5.90115
+Content-Type: application/json; charset=utf-8
+
+{
+   "hits" : {
+      "total" : 48,
+      "max_score" : 8.194588,
+      "hits" : [
+         {
+            "_score" : 8.194588,
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "fields" : {
+               "distribution" : "The-synthesizer",
+               "version" : "0.0201"
+            },
+            "_id" : "i1e_O_crNTIEdCBEgjW_9xU__Ps"
+         },
+         {
+            "_id" : "x8Py_avXOSCO0KtUkPusMXVrtAI",
+            "fields" : {
+               "version" : "0.05",
+               "distribution" : "Mojolicious-Plugin-Ical"
+            },
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_score" : 8.194588
+         },
+         {
+            "fields" : {
+               "version" : "0.04",
+               "distribution" : "Mojo-UserAgent-DigestAuth"
+            },
+            "_id" : "cbH3aE_H8IgWzivIDgUKMR7PYac",
+            "_score" : 8.194588,
+            "_index" : "cpan_v1_01",
+            "_type" : "release"
+         },
+         {
+            "_score" : 8.194588,
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_id" : "p6gWTyMp642yVE2e6zoCnzZKaqM",
+            "fields" : {
+               "version" : "0.03",
+               "distribution" : "Mojolicious-Plugin-Loop"
+            }
+         },
+         {
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_score" : 8.194588,
+            "_id" : "FZiVxlA5C_s3AWQ1xKO8qJIWMCc",
+            "fields" : {
+               "version" : "0.05",
+               "distribution" : "Mojolicious-Plugin-Pager"
+            }
+         },
+         {
+            "_id" : "hr5V3xOvw4yC7AmM_7UG2QP_dhM",
+            "fields" : {
+               "distribution" : "App-proxyforurl",
+               "version" : "0.07"
+            },
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_score" : 8.194588
+         },
+         {
+            "fields" : {
+               "distribution" : "OpenAPI-Client",
+               "version" : "0.21"
+            },
+            "_id" : "_uSC9g_gpCouiWo8LYgaM0G9Gp0",
+            "_score" : 8.194588,
+            "_index" : "cpan_v1_01",
+            "_type" : "release"
+         },
+         {
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "_score" : 8.194588,
+            "fields" : {
+               "distribution" : "Cloudinary",
+               "version" : "0.16"
+            },
+            "_id" : "LKI7JmsNHPvG8jvA9ZHDVXSBzV8"
+         },
+         {
+            "_score" : 8.194588,
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_id" : "QVpydniguKpxG7J1Z0tVOaqMsec",
+            "fields" : {
+               "version" : "0.02",
+               "distribution" : "Mojolicious-Plugin-Webpack"
+            }
+         },
+         {
+            "fields" : {
+               "distribution" : "Mojo-mysql",
+               "version" : "1.09"
+            },
+            "_id" : "VYbxit3raAfeCAIG5GkrsOemyGs",
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "_score" : 8.194588
+         },
+         {
+            "_score" : 8.194588,
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_id" : "C6R_iv6StPiBPKZBdw74wivUmAw",
+            "fields" : {
+               "distribution" : "Mojo-APNS",
+               "version" : "1.01"
+            }
+         },
+         {
+            "fields" : {
+               "version" : "0.79",
+               "distribution" : "Toadfarm"
+            },
+            "_id" : "ZQTgpoVCTdbNuI9pYVAr7O_6Pas",
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "_score" : 8.194588
+         },
+         {
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_score" : 8.194588,
+            "_id" : "8Z9Sjwj5zaFteQPm_yT4taQ3Ic8",
+            "fields" : {
+               "distribution" : "Mojolicious-Plugin-OpenAPI",
+               "version" : "2.07"
+            }
+         },
+         {
+            "_score" : 8.188318,
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_id" : "tehgnXJZScfIfG6EYJesyA0pxdo",
+            "fields" : {
+               "version" : "0.2",
+               "distribution" : "Mojolicious-Plugin-RequestBase"
+            }
+         },
+         {
+            "_id" : "eyGGPNCTAVi7cISXVb1pq5MYD1Q",
+            "fields" : {
+               "version" : "0.09",
+               "distribution" : "App-tt"
+            },
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_score" : 8.188318
+         },
+         {
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_score" : 8.188318,
+            "_id" : "FGdv_NfT2z2XklMAQwVoZiLODe4",
+            "fields" : {
+               "version" : "0.13",
+               "distribution" : "App-sslmaker"
+            }
+         },
+         {
+            "_score" : 8.188318,
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_id" : "ZCR8P3uXhPfkwXcVmXQcTTAAXPU",
+            "fields" : {
+               "distribution" : "App-podify",
+               "version" : "0.03"
+            }
+         },
+         {
+            "_id" : "yI2uCO0fMBdPSp2fN3PYl3TTzJY",
+            "fields" : {
+               "version" : "0.05",
+               "distribution" : "App-remarkpl"
+            },
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_score" : 8.188318
+         },
+         {
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "_score" : 8.188318,
+            "fields" : {
+               "distribution" : "App-docsisious",
+               "version" : "0.10"
+            },
+            "_id" : "nkFHcx2dDFAiSexdu3B_ra1v2Qc"
+         },
+         {
+            "_score" : 8.188318,
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "fields" : {
+               "version" : "0.02",
+               "distribution" : "Mojo-Transmission"
+            },
+            "_id" : "It1lXP9PNYz3LKVAEWVGzAOnlNg"
+         },
+         {
+            "_id" : "KOToX8lGc_ouScTrg40tReGrJps",
+            "fields" : {
+               "version" : "0.76",
+               "distribution" : "DOCSIS-ConfigFile"
+            },
+            "_score" : 8.188318,
+            "_type" : "release",
+            "_index" : "cpan_v1_01"
+         },
+         {
+            "_score" : 8.188318,
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_id" : "9sdgDJOT4MoN5qwa6leoWe3o1Ss",
+            "fields" : {
+               "distribution" : "Mojo-Redis2",
+               "version" : "0.36"
+            }
+         },
+         {
+            "fields" : {
+               "distribution" : "Mandel",
+               "version" : "0.30"
+            },
+            "_id" : "rqpj8JpHQojNxoy5oTZL5Y8gXxA",
+            "_score" : 8.188318,
+            "_index" : "cpan_v1_01",
+            "_type" : "release"
+         },
+         {
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "_score" : 8.188318,
+            "fields" : {
+               "distribution" : "Mojolicious-Plugin-AssetPack",
+               "version" : "2.06"
+            },
+            "_id" : "MF8PxIWn_IHouVXmSW_CCguZfu0"
+         },
+         {
+            "fields" : {
+               "distribution" : "W3C-Validator-Server",
+               "version" : "0.1201"
+            },
+            "_id" : "JoOXrVvp47xBKdSgox7qmcpeB_w",
+            "_score" : 8.188318,
+            "_index" : "cpan_v1_01",
+            "_type" : "release"
+         },
+         {
+            "fields" : {
+               "version" : "0.31",
+               "distribution" : "App-git-ship"
+            },
+            "_id" : "0W891M49NleIWpiLTcJELgL6uE8",
+            "_score" : 8.188318,
+            "_index" : "cpan_v1_01",
+            "_type" : "release"
+         },
+         {
+            "_id" : "Dgii3q22Z_mdq4c_mN5jCa5mU0Q",
+            "fields" : {
+               "distribution" : "Mojo-IRC",
+               "version" : "0.45"
+            },
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_score" : 8.188318
+         },
+         {
+            "_score" : 8.188318,
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_id" : "dSrWobb5rJ0olY2XvyhIxvzxkPc",
+            "fields" : {
+               "distribution" : "Mojolicious-Plugin-CGI",
+               "version" : "0.40"
+            }
+         },
+         {
+            "fields" : {
+               "version" : "0.06",
+               "distribution" : "App-screenorama"
+            },
+            "_id" : "a8JzSErvw9qaRz3jLuIkdyCuaJ0",
+            "_score" : 8.106197,
+            "_index" : "cpan_v1_01",
+            "_type" : "release"
+         },
+         {
+            "fields" : {
+               "distribution" : "Locale-Maketext-From-Strings",
+               "version" : "0.03"
+            },
+            "_id" : "CbZMR9yt2zinAfGFQRdW0x12RAg",
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "_score" : 8.106197
+         },
+         {
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_score" : 8.106197,
+            "_id" : "sBAuu4_gmeIdo34J__KqhZt6Dac",
+            "fields" : {
+               "version" : "0.12",
+               "distribution" : "Net-DHCP-Info"
+            }
+         },
+         {
+            "_score" : 8.106197,
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "fields" : {
+               "version" : "1.00",
+               "distribution" : "App-mojopaste"
+            },
+            "_id" : "Me0cZFP5nhhYyBV_gD3YGONiwno"
+         },
+         {
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_score" : 8.106197,
+            "_id" : "Ijr2rF0VMAm6l3xyyqc20cskb3w",
+            "fields" : {
+               "distribution" : "Mojo-UserAgent-Role-Cache",
+               "version" : "0.02"
+            }
+         },
+         {
+            "fields" : {
+               "version" : "0.10",
+               "distribution" : "Mojolicious-Plugin-Logf"
+            },
+            "_id" : "YvvvVXLZzKZsfWPoqbN5eC9ZxOg",
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "_score" : 8.106197
+         },
+         {
+            "_score" : 8.106197,
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "fields" : {
+               "distribution" : "Mojolicious-Plugin-Responsinator",
+               "version" : "0.03"
+            },
+            "_id" : "2irFJIawJSXss83taDzD0Q1i48M"
+         },
+         {
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "_score" : 8.106197,
+            "fields" : {
+               "version" : "0.37",
+               "distribution" : "Mojo-IOLoop-ReadWriteFork"
+            },
+            "_id" : "MimRfDA2GJwfDvRsotlC0JM4yYY"
+         },
+         {
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "_score" : 8.106197,
+            "fields" : {
+               "version" : "0.02",
+               "distribution" : "Mojolicious-Plugin-Surveil"
+            },
+            "_id" : "fkCMkcae25zQkCyzQ_mRy1DP_bk"
+         },
+         {
+            "_id" : "FoWFpmL2PTcQwkC1PVvwDNsrCVU",
+            "fields" : {
+               "version" : "0.05",
+               "distribution" : "App-prowess"
+            },
+            "_score" : 8.106197,
+            "_type" : "release",
+            "_index" : "cpan_v1_01"
+         },
+         {
+            "_score" : 8.106197,
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_id" : "ZohFCMzJuSf7kvrHTrcgJmPJfG0",
+            "fields" : {
+               "version" : "0.0101",
+               "distribution" : "Class-Accessor-Fast-WithBuilder"
+            }
+         },
+         {
+            "_score" : 8.106197,
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_id" : "QwmDdO615Lkef4nA2CR0rznBs14",
+            "fields" : {
+               "version" : "0.04",
+               "distribution" : "Mojo-GoogleAnalytics"
+            }
+         },
+         {
+            "fields" : {
+               "distribution" : "DBIx-TempDB",
+               "version" : "0.15"
+            },
+            "_id" : "JOeBrDbTX9D1piwNTXyHI_AY3kY",
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "_score" : 8.106197
+         },
+         {
+            "fields" : {
+               "version" : "0.13",
+               "distribution" : "Mojo-SNMP"
+            },
+            "_id" : "C_sUZitnXf_icok2r0a_Fw6U1Rs",
+            "_score" : 8.106197,
+            "_index" : "cpan_v1_01",
+            "_type" : "release"
+         },
+         {
+            "_id" : "G8tw8dWkPngEujNqpVcEJshijz0",
+            "fields" : {
+               "distribution" : "Refine",
+               "version" : "0.01"
+            },
+            "_score" : 8.106197,
+            "_type" : "release",
+            "_index" : "cpan_v1_01"
+         },
+         {
+            "fields" : {
+               "version" : "0.15",
+               "distribution" : "Applify"
+            },
+            "_id" : "KXvB0ijxlBg8lVrqfpvOF_PELZw",
+            "_score" : 8.106197,
+            "_index" : "cpan_v1_01",
+            "_type" : "release"
+         },
+         {
+            "_id" : "_WLaGUx7_z0QNYDJpWlkdF3a4Wg",
+            "fields" : {
+               "distribution" : "JSON-Validator",
+               "version" : "2.19"
+            },
+            "_type" : "release",
+            "_index" : "cpan_v1_01",
+            "_score" : 8.106197
+         },
+         {
+            "_score" : 8.106197,
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "fields" : {
+               "distribution" : "Test-Mojo-Role-Selenium",
+               "version" : "0.15"
+            },
+            "_id" : "bxvlK1Me7qdUqyMelMMeNGisFHw"
+         },
+         {
+            "_index" : "cpan_v1_01",
+            "_type" : "release",
+            "_score" : 8.106197,
+            "fields" : {
+               "version" : "1.02",
+               "distribution" : "LinkEmbedder"
+            },
+            "_id" : "UpG3w0hl2tV_2SF8QnYCJiN0uBE"
+         },
+         {
+            "fields" : {
+               "version" : "3.16",
+               "distribution" : "Mojo-Redis"
+            },
+            "_id" : "nCfw21AIdpfFivbDC_Fnlj4A998",
+            "_score" : 8.106197,
+            "_index" : "cpan_v1_01",
+            "_type" : "release"
+         }
+      ]
+   },
+   "_shards" : {
+      "total" : 3,
+      "successful" : 3,
+      "failed" : 0
+   },
+   "timed_out" : false,
+   "took" : 10
+}

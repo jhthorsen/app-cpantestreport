@@ -18,7 +18,7 @@ sub _get_summary_by_author_p {
 
   my @metacpan = (
     metacpan => [qw(release _search)],
-    {fields => 'distribution,version', size => '100', q => sprintf('author:%s AND status:latest', uc $author)}
+    [fields => 'distribution,version', size => '100', q => sprintf('author:%s AND status:latest', uc $author)],
   );
 
   my %latest;

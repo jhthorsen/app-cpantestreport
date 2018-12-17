@@ -19,6 +19,7 @@ sub startup {
   $self->hook(around_action => \&_hook_around_action);
   $self->_add_helper_backend;
   $self->_add_helper_cache;
+  $self->_add_helper_dist;
   $self->_add_helper_human_date;
   $self->_add_helper_markdown;
 
@@ -32,6 +33,7 @@ sub startup {
 
 sub _add_helper_backend {
   my $self = shift;
+  my $ua = $ENV{MOJO_REDIS_CACHE_OFFLINE} ? Mojo::UserAgent->with_roles('+Cache')->new : $self->ua;
 
   $self->helper(
     backend => sub {
@@ -45,7 +47,7 @@ sub _add_helper_backend {
         $url->clone->scheme(undef)->to_string,
         $c->stash('cache_timeout') || 600,
         sub {
-          return $c->app->ua->get_p($url)->then(sub {
+          return $ua->get_p($url)->then(sub {
             my $tx = shift;
             return $tx->res->json unless my $err = $tx->error;
             die "[$backend] $err->{message} <<< $url";
@@ -65,6 +67,18 @@ sub _add_helper_cache {
       my $c = shift;
       return $c->stash->{'redis.cache'}
         ||= $redis->cache(namespace => 'cpantestreport')->refresh($c->param('_refresh'));
+    }
+  );
+}
+
+sub _add_helper_dist {
+  my $self = shift;
+  $self->helper(
+    dist => sub {
+      local $_ = $_[1];
+      s!::!-!g;
+      s!-0+$!!;
+      return $_;
     }
   );
 }
@@ -92,7 +106,7 @@ sub _add_helper_markdown {
 
       $text //= '';
       $text =~ s|(\w\S+\@\S+\.\w{2,})|<a href="mailto:$1">$1</a>|g;
-      $text =~ s|(https?://\S+)([\!\.,]\s)?|<a href="$1">$1</a>$2|g;
+      $text =~ s|(https?://\S+)|<a href="$1">$1</a>|g;
       $text =~ s|(\w\S+-\d+\.[\d\.]+)|<a href="$dist_url$1">$1</a>|g;
       $text = join '', map {"<p>$_</p>"} split /\n\r?\n\r?/, $text;
 
