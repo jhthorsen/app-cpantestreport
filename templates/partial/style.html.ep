@@ -12,6 +12,10 @@ body > footer.container {
   padding-bottom: 0;
 }
 
+.cloud {
+  margin: 0;
+}
+
 .cloud .badge {
   padding: 0.3em 0;
   display: inline-block;
@@ -36,6 +40,10 @@ body > footer.container {
   padding: 0.4em 0;
   width: 100%;
   z-index: 10;
+}
+
+.navbar-wrapper.fixed {
+  position: fixed;
 }
 
 .vertical-align {
@@ -71,9 +79,14 @@ body > footer.container {
 }
 
 @media (max-width: 34rem) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
   .page-search {
     background: #f9f9f9;
   }
+
   .page-search .empty {
     border: 0;
   }
