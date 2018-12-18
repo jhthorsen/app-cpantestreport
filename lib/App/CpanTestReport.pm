@@ -6,7 +6,7 @@ use Scalar::Util 'blessed';
 use Time::Piece;
 use Time::Seconds;
 
-our $VERSION = '0.01';
+our $VERSION = '0.03';
 
 sub startup {
   my $self = shift;

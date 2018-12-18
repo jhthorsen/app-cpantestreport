@@ -1,4 +1,21 @@
 Revision history for perl distribution App-CpanTestReport
 
-0.01 Not Released
- - Started project
+0.03 2018-12-19T08:51:12+0900
+ - Fix searching for module names with multiple "::"
+ - Add tests
+ - Improved styling for small screens
+
+0.02 2018-10-05T18:06:47+0900
+ - Fix finding correct lib directory
+ - Add missing dependency Text::Markdown
+ - Replaced PromiseActions with custom hook
+ - Add custom 500 and 404 pages
+
+0.01 2018-10-04T16:49:15+0900
+ - Add cache and backend helpers
+ - Can show summary for author
+ - Can redirect to latest dist version
+ - Can render test reports for dist
+ - Can render individual test report
+ - Ready for docker
+
