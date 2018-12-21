@@ -17,6 +17,7 @@ sub startup {
   );
 
   $self->hook(around_action => \&_hook_around_action);
+  $self->hook(before_dispatch => \&_hook_before_dispatch) if $ENV{X_REQUEST_BASE};
   $self->_add_helper_backend;
   $self->_add_helper_cache;
   $self->_add_helper_dist;
@@ -136,6 +137,12 @@ sub _hook_around_action {
   }
 
   return @args;
+}
+
+sub _hook_before_dispatch {
+  my $c = shift;
+  return unless my $base = $c->req->headers->header('X-Request-Base');
+  $c->req->url->base(Mojo::URL->new($base));
 }
 
 1;

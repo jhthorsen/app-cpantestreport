@@ -1,5 +1,8 @@
 Revision history for perl distribution App-CpanTestReport
 
+0.04 Not Released
+ - Add support for X-Request-Base header
+
 0.03 2018-12-19T08:51:12+0900
  - Fix searching for module names with multiple "::"
  - Add tests
