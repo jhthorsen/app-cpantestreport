@@ -163,6 +163,9 @@ L<App::CpanTestReport> is a web page where you can search for CPAN Testers
 reports by module, distribution or author and see test reports created by
 L<http://cpantesters.org/>.
 
+You can see an example of this application at
+L<https://app.thorsen.pm/cpantestreport>.
+
 =head1 RESOURCES
 
 =over 2

@@ -12,6 +12,9 @@ App::CpanTestReport - Search for CPAN Testers reports by module, distribution or
 reports by module, distribution or author and see test reports created by
 [http://cpantesters.org/](http://cpantesters.org/).
 
+You can see an example of this application at
+[https://app.thorsen.pm/cpantestreport](https://app.thorsen.pm/cpantestreport).
+
 # RESOURCES
 
 - /
