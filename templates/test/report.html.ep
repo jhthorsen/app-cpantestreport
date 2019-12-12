@@ -20,37 +20,37 @@
     <li><a href="<%= url_for('dist.report', name => "$distribution->{name}-$distribution->{version}") %>">More reports...</a></li>
   </ol>
 
-  %= markdown $result->{output}{preamble}
+  %= markdown $result->{preamble}
 
   <h2 id="program-output">Program output</h2>
-  <pre class="program-output"><%= $result->{output}{program_output} %></pre>
+  <pre class="program-output"><%= $result->{program_output} %></pre>
 
   <h2 id="prerequisites">Prerequisites</h2>
   <h3>Requires</h3>
   <ul class="requires">
-    % for my $name (keys %{$result->{output}{prerequisites}{requires} || {}}) {
-      % my $version = $result->{output}{prerequisites}{requires}{$name};
+    % for my $name (sort keys %{$result->{prerequisites}{requires} || {}}) {
+      % my $version = $result->{prerequisites}{requires}{$name};
       <li><a href="<%= url_for('dist.report', name => dist("$name-$version")) %>"><%= "$name $version" %></a></li>
     % }
   </ul>
   <h3>Build requires</h3>
   <ul class="build-requires">
-    % for my $name (keys %{$result->{output}{prerequisites}{build_requires} || {}}) {
-      % my $version = $result->{output}{prerequisites}{build_requires}{$name};
+    % for my $name (sort keys %{$result->{prerequisites}{build_requires} || {}}) {
+      % my $version = $result->{prerequisites}{build_requires}{$name};
       <li><a href="<%= url_for('dist.report', name => dist("$name-$version")) %>"><%= "$name $version" %></a></li>
     % }
   </ul>
   <h3>Configure requires</h3>
   <ul class="configure-requires">
-    % for my $name (keys %{$result->{output}{prerequisites}{configure_requires} || {}}) {
-      % my $version = $result->{output}{prerequisites}{configure_requires}{$name};
+    % for my $name (sort keys %{$result->{prerequisites}{configure_requires} || {}}) {
+      % my $version = $result->{prerequisites}{configure_requires}{$name};
       <li><a href="<%= url_for('dist.report', name => dist("$name-$version")) %>"><%= "$name $version" %></a></li>
     % }
   </ul>
 
   <h2 id="tester-comments">Tester comments</h2>
-  %= markdown $result->{output}{tester_comments}
+  %= markdown $result->{tester_comments}
 
   <h2 id="environment-and-other-context">Environment and other context</h2>
-  <pre class="environment-and-other-context"><%= $result->{output}{environment_and_other_context} %></pre>
+  <pre class="environment-and-other-context"><%= $result->{environment_and_other_context} %></pre>
 </div>
